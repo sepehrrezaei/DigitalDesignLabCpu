@@ -1,8 +1,4 @@
-module control (
-    instruction_part,
-    ALUSrc, MemtoReg, RegWrite,
-    MemRead, MemWrite, Branch, ALUOp1, ALUOp0
-);
+module control (instruction_part,ALUSrc, MemtoReg, RegWrite,MemRead, MemWrite, Branch, ALUOp1, ALUOp0);
 
     input [6:0] instruction_part;
     output ALUSrc, MemtoReg, RegWrite, MemRead, MemWrite, Branch, ALUOp1, ALUOp0;
