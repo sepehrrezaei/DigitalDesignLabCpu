@@ -13,7 +13,7 @@ Reg register_file1(.clk(clk), .RegWrite(RegWrite),
 		.Write_data(Databus3), .Read_data1(Databus1), .Read_data2(Databus2));
 
 	
-multiplexer (.input_data_1(input_data_1), .input_data_2(input_data_2), .input_select(input_select), .output_data(output_data));
+multiplexer multiplexer1(.input_data_1(input_data_1), .input_data_2(input_data_2), .input_select(input_select), .output_data(output_data));
 
 memory memory1( .clk(clk), .Address(Address), .Write_data(Write_data), .Read_data(Read_data), .MemRead(MemRead), .MemWrite(MemWrite))
 
