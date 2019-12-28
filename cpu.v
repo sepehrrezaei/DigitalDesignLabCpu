@@ -15,7 +15,7 @@ Reg register_file1(.clk(clk), .RegWrite(RegWrite),
 	
 multiplexer multiplexer1(.input_data_1(input_data_1), .input_data_2(input_data_2), .input_select(input_select), .output_data(output_data));
 
-memory memory1( .clk(clk), .Address(Address), .Write_data(Write_data), .Read_data(Read_data), .MemRead(MemRead), .MemWrite(MemWrite))
+memory memory1( .clk(clk), .Address(Address), .Write_data(Write_data), .Read_data(Read_data), .MemRead(MemRead), .MemWrite(MemWrite));
 
 	
 control control1(.instruction_part(instruction_part),.ALUSrc(ALUSrc), .MemtoReg(MemtoReg), .RegWrite(RegWrite),.MemRead(MemRead), .MemWrite(MemWrite), .Branch(Branch), .ALUOp1(ALUOp1), .ALUOp0(ALUOp0));
