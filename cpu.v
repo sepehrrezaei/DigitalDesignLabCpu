@@ -1,5 +1,5 @@
 module cpu();
-wire clk ,RD_Address,Instruction,pcout;
+wire clk ,RD_Address,Instruction,pcout,Address,Write_data,Read_data,MemRead,MemWrite;
 wire [31:0] Databus1, Databus2, Databus3;
 wire [63:0] Instruction;
 integer write=1,reset=0;
