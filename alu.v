@@ -2,7 +2,7 @@ module ALU(in1, in2, control,out);
 	input [63:0] in1, in2;
 	input [3:0] control;
 	output reg [63:0] out;
-	always @(*)
+	always @(control)
 		case (control)
 			4'b0000: out <= in1 & in2;
 			4'b0001: out <= in1 | in2;

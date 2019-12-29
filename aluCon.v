@@ -11,7 +11,7 @@ module aluCon (ALUOp0, ALUOp1, instruction_part, operation_code);
             2'b00: operation_code = 4'b0010;
             2'bx1: operation_code = 4'b0111;
             2'b1x: begin
-                casex(instruction_part)
+                case(instruction_part)
                     10'b00000000000: operation_code = 4'b0010;
                     10'b01000000000: operation_code = 4'b0110;
                     10'b00000000111: operation_code = 4'b0000;

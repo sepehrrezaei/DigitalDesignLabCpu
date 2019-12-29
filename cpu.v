@@ -8,7 +8,7 @@ clock clock1(.clk(clk));
 
 adder adder1(.clk(clk),.input_data_1(pcOld),.input_data_2(64'b100),.output_data(pcOld));
 
-pc pc1(.clk(clk), .data_out(pcOld) , .pcout(pcout) , .reset(reset) ,.write(write));
+pc pc1(.clk(clk), .data_input(pcOld) , .pcout(pcout) , .reset(reset) ,.write(write));
 
 insMem insMem1(.clk(clk),.RD_Address(pcout),.data_out(Instruction));
 
