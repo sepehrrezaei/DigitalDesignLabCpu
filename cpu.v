@@ -1,14 +1,16 @@
 module cpu();
 wire clk ,MemRead,MemWrite,ALUSrc, MemtoReg, RegWrite,Branch, ALUOp1, ALUOp0;
-wire [63:0] Databus1,Write_data,Read_data, Databus2, DataWriteRegister,multi1Out,data_out,pcout,RD_Address,outImmGen,aluOut;
+wire [63:0] Databus1,Write_data,Read_data, Databus2, DataWriteRegister,multi1Out,pcOld,pcout,RD_Address,outImmGen,aluOut;
 wire [3:0] operation_code;
 wire [31:0] Instruction;
 integer write=1,reset=0;
 clock clock1(.clk(clk));
 
-insMem insMem1(.clk(clk),.RD_Address(pcout),.data_out(Instruction));
+adder adder1(.clk(clk),.input_data_1(pcOld),.input_data_2(64'b100),.output_data(pcOld));
 
-pc pc1(.clk(clk), .data_out(data_out) , .pcout(pcout) , .reset(reset) ,.write(write));
+pc pc1(.clk(clk), .data_out(pcOld) , .pcout(pcout) , .reset(reset) ,.write(write));
+
+insMem insMem1(.clk(clk),.RD_Address(pcout),.data_out(Instruction));
 
 Reg register_file1(.clk(clk), .RegWrite(RegWrite), 
 		.Read_register1(Instruction[19:15]), .Read_register2(Instruction[24:20]), .Write_register(Instruction[11:7]),
