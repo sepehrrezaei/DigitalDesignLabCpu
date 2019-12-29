@@ -1,12 +1,12 @@
 module cpu();
-wire clk ,RD_Address,Instruction,pcout,Address,Write_data,Read_data,MemRead,MemWrite,input_data_1,input_data_2,input_select,instruction_part,ALUSrc, MemtoReg, RegWrite,Branch, ALUOp1, ALUOp0,operation_code,in1, in2, control,aluOut,outImmGen;
-wire [63:0] Databus1, Databus2, DataWriteRegister,multi1Out;
-
-wire [63:0] Instruction;
+wire clk ,MemRead,MemWrite,ALUSrc, MemtoReg, RegWrite,Branch, ALUOp1, ALUOp0;
+wire [63:0] Databus1,Write_data,Read_data, Databus2, DataWriteRegister,multi1Out,data_out,pcout,RD_Address,outImmGen,aluOut;
+wire [3:0] operation_code;
+wire [31:0] Instruction;
 integer write=1,reset=0;
 clock clock1(.clk(clk));
 
-insMem insMem1(.clk(clk),.RD_Address(data_out),.data_out(Instruction));
+insMem insMem1(.clk(clk),.RD_Address(pcout),.data_out(Instruction));
 
 pc pc1(.clk(clk), .data_out(data_out) , .pcout(pcout) , .reset(reset) ,.write(write));
 

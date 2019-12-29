@@ -1,6 +1,6 @@
 module insMem( clk,RD_Address,data_out );
 input clk;
-parameter n=63;
+parameter n=31;
 input [n:0] RD_Address;
 output reg[n:0] data_out ;
 reg [n:0] tmp;
