@@ -7,6 +7,6 @@ module ImmGen(instruction, output_data);
     begin 
         output_data <= $signed(instruction);
     end
-    endmodule
 
+    
 endmodule
