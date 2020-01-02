@@ -1,4 +1,4 @@
 # DigitalDesignLabCpu
 
-# sepehr rezaei & farzad faghih
-# kharazmi university
+sepehr rezaei & farzad faghih </br>
+kharazmi university
